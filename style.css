@@ -1,0 +1,418 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box; 
+}
+
+body {
+    height: 100vh; 
+    margin: 0; 
+    padding: 0; 
+
+    --transparency: 0.8; 
+    background: linear-gradient(90deg, rgba(27,26,55,0.9) 0%, rgba(53,53,89,0.8) 74%, rgba(52,60,88,0.8) 100%),
+        url("./images/winter.jpeg") center/cover repeat fixed;
+
+    display: flex;
+    justify-content: center;  
+}
+
+.info-section {
+    flex: 4; 
+
+    display: flex;  
+    justify-content: center; 
+    align-items: center; 
+    align-content: center;
+
+    position: relative; 
+    height: 100vh; 
+    margin: 0px 20px;
+
+}
+
+.info-items {
+    position: absolute; 
+    top: 20vh;  
+
+    color: white; 
+    font-size: 1.5rem; 
+}
+
+.info-items > * {
+    margin: 10px; 
+}
+
+.info-items h1 {
+    margin: 0px; 
+    font-size: 180%; 
+    font-weight: normal; 
+}
+
+.date-section p {
+    margin: 0px; 
+    color: rgb(195, 194, 206); 
+}
+
+.weather-section .weather-text {
+    flex: 1; 
+}
+
+.weather-section {
+    margin: 20px 10px 0px 10px; 
+    width: 70%;
+
+    display: flex; 
+    align-items: stretch; 
+
+    font-weight: lighter; 
+}
+
+.weather-icon {
+    height: 100px; 
+    width: 100px; 
+    background: url('./images/icons/unknown.png') center/90% no-repeat, 
+        linear-gradient(to bottom, white 0 50%, rgb(228, 228, 228) 50% 100%); 
+    border-radius: 15px 0px 0px 15px; 
+}
+
+.weather-text {
+    width: 20vw;  
+    background:  linear-gradient(to bottom, rgb(34, 32, 68) 0 50%, rgb(27,26,55) 50% 100%); 
+    border-radius: 0px 15px 15px 0px; 
+    padding: 15px; 
+
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+
+    line-height: 25px; 
+    color: rgb(195, 194, 206); 
+}
+
+.weather-section p {
+    margin: 0px; 
+}
+
+.temperature {
+    cursor: pointer; 
+}
+
+.weather-description {
+    font-size: 1.2rem; 
+}
+
+.weather-notification {
+    margin: 0px 10px; 
+    font-weight: lighter; 
+    display: flex; 
+    align-items: baseline; 
+}
+
+.weather-notification p {
+    font-size: 1rem; 
+    margin: 8px 0px 0px 5px; 
+}
+
+.weather-notification i.fa-exclamation-triangle {
+    font-size: 1rem; 
+    color: rgb(181, 183, 196); 
+}
+
+.todo-form {
+    position: relative; 
+}
+
+.todo-question p {
+    margin: 10% 0px 3% 0px; 
+    font-weight: lighter; 
+    color: white; 
+}
+
+.todo-input {
+    background: transparent; 
+    color: white; 
+    border: none; 
+    border-bottom: 2px solid rgb(93, 93, 119); 
+    width: 80%; 
+    height: 40px; 
+
+    font-size: 1.2rem; 
+    font-weight: lighter; 
+}
+
+.todo-form .underline {
+    background: #DBA511; 
+    position: absolute; 
+    bottom: 0.5px;
+    height: 2px; 
+    width: 80%; 
+
+    transform: scaleX(0); 
+    transition: transform 0.3s ease; 
+}
+
+.todo-form .todo-input:focus ~ .underline {
+    transform: scaleX(1);
+}
+
+.todo-input::placeholder {
+    color: rgb(167, 166, 172); 
+    font-style: italic; 
+}
+
+.todo-input:focus {
+    outline: none; 
+}
+
+.todo-button {
+    background: transparent; 
+    border: none; 
+    color: white; 
+    font-size: 1.2rem; 
+    cursor: pointer;
+}
+
+.todo-button:focus {
+    outline: none; 
+}
+
+.todo-button:hover {
+    color: rgb(182, 182, 182); 
+}
+
+.todo-section {
+    flex: 3;
+}
+
+.todo-box {
+    height: max(93vh, 502px); 
+    width: min(30vw, 432px); 
+    margin: 3.5vh 0px;
+    border-radius: 15px; 
+    background: rgb(241, 241, 241); 
+
+    display: flex; 
+    align-items: center; 
+    flex-direction: column; 
+
+    overflow: hidden; 
+    float: left; 
+}
+
+.todo-title {
+    background: #DBA511;
+    color: black; 
+    font-weight: normal; 
+    margin: 0px; 
+    width: 100%; 
+
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    position: relative;
+}
+
+.select {
+    margin: 10px; 
+    width: 100%; 
+    min-height: 32px;
+    position: relative; 
+}
+
+.todo-box select {
+    position: absolute; 
+    top: 6px; 
+    right: 40px; 
+
+    border-radius: 15px; 
+    border: none; 
+    font-size: 1rem;
+    background: linear-gradient(to right, white 0 82%, #DBA511 82% 100%);
+}
+
+.todo-container {
+    width: 100%; 
+    height: 79%; 
+}
+
+.todo-clear {
+    position: relative;
+    left: 3%; 
+    cursor: pointer; 
+}
+
+.todo-clear i {
+    font-size: 1.5rem; 
+}
+
+.todo.container {
+    overflow: auto; 
+}
+
+.todo-list {
+    padding: 0;
+    margin: 0; 
+    
+    height: 91%; 
+    overflow: auto; 
+}
+
+.item {
+    width:100%;
+    height: 45px;
+    min-height: 45px;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex; 
+    align-items: center; 
+}
+
+.item i[job="complete"]{
+    /* position: absolute;
+    left: 15px;
+    top: 10px; */
+    font-size: 1.5625rem;
+    padding-left: 4%;
+    
+    cursor: pointer;
+}
+
+.fa-circle {
+    color: rgba(0,0,0,0.2);
+}
+
+.fa-check-circle{
+    color:#6eb200;
+}
+
+.item p {
+    /* position: absolute;
+    left: 55px;
+    top: 12px; */
+    flex: 1;
+    position: relative; 
+    top: 5px; 
+    padding: 0;
+    margin: 0px 2% 0px 3%;
+    font-size: 1rem;
+    max-width: 67%;
+    height: 30px;
+    white-space: nowrap; 
+    overflow: auto;
+} 
+
+.item p::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: transparent;
+}
+
+.item p::-webkit-scrollbar {
+  height: 3px;  
+  width: 3px; 
+}
+
+.item p::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #DBA511;
+  cursor: pointer; 
+}
+
+.item p::-webkit-scrollbar-thumb:hover {
+  background-color: #e2d09d;  
+}
+
+.item p::-webkit-scrollbar-thumb:active {
+  background-color: #e2d09d;
+}
+
+.lineThrough {
+    text-decoration: line-through;
+    color : #ccc;
+}
+
+.item .lineThrough::-webkit-scrollbar-thumb {
+  background-color: rgba(214, 179, 84, 0.3);
+}
+
+.item .lineThrough::-webkit-scrollbar-thumb:active {
+  background-color: rgba(207, 195, 161, 0.3);
+}
+
+.item i[job="delete"] {
+    /* position: absolute;
+    right: 4.2%;
+    top: 10px; */
+    margin: 0px 2% 0px 0px; 
+    font-size: 1.5625rem;
+    cursor: pointer;
+}
+
+.item i[job="delete"]:hover{
+    color:#af0000;
+}
+
+.item i[job="priority"]{
+    /* position: absolute; 
+    right: 12%; 
+    top: 13px; */
+    margin: 0px 2% 0px 1%; 
+    font-size: 1.25rem;
+    visibility: hidden;
+}
+
+.far.fa-star {
+    color: rgba(0,0,0,0.2);
+}
+
+.item .fas.fa-star {
+    color: #DBA511;
+    visibility: visible; 
+}
+
+.item:hover > i[job="priority"] {
+    visibility: visible;
+}
+
+.item:hover > .lineThrough ~ i[job="priority"] {
+    visibility: hidden; 
+}
+
+
+/* Media Queries */
+@media(max-width: 768px) {
+body {
+    height: auto; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    /* align-items: center;  */
+
+    /* align-content: center;  */
+    flex-wrap: wrap; 
+}
+
+.info-items {
+    position: relative; 
+    top: 0px; 
+}
+
+.info-section {
+    flex: 0;
+    margin: 100px auto; 
+}
+
+.todo-section {
+    flex: 0; 
+    margin: 0px 0px 60px 0px; 
+}
+
+.todo-box {
+    width: 70%; 
+    margin: auto; 
+    float: none; 
+}
+
+}
